@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+	font-family: "Quicksand";
+	src: url(./assets/Quicksand-VariableFont_wght.ttf);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+	margin: 0;
+	font-family: "Quicksand", Fallback, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.main-heading {
+	font-size: 2.25rem;
+}
+
+.main-content {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	padding: 2rem;
+}
+
+.text-input {
+	padding-top: 1rem;
+}
+
+.description {
+	max-width: 33rem;
+	line-height: 1.85;
+}
+
+.external-link {
+	border-bottom: 2px solid #60a5fa;
+	text-decoration: none;
+	color: inherit;
+}
+
+.text-input > textarea {
+	width: 80%;
+	height: 20rem;
+	padding: 1rem;
+	line-height: 1.85;
+	border: 1.5px solid #e5e7eb;
+	border-radius: 5px;
+}
+
+.chart-container {
+	border: 1px solid #d1d5db;
+	border-radius: 5px;
+}
+
+.reference-links {
+	display: flex;
+	padding-top: 1.5rem;
+}
+
+.reference-links > a:not(:first-child) {
+	margin-left: 20px;
+}
+
+@media screen and (max-width: 640px) {
+	.main-content {
+		grid-template-columns: 1fr;
+		padding: 2rem;
+	}
+
+	.text-input > textarea {
+		width: 90%;
+		height: 20rem;
+	}
+
+	.main-heading {
+		font-size: 2rem;
+	}
 }
