@@ -1,17 +1,42 @@
-import { useState } from "react";
+import { createRef, useEffect, useState } from "react";
 
 import { Para } from "../components/Para";
 import { Link } from "../components/Link";
 import { MaxWordsWarningMessage } from "../components/MaxWordsWarningMessage";
+import Tree from "react-d3-tree";
+import { baseStyles } from "../utils/chart-styles";
+import { useTranslate } from "../hooks/use-translate";
+
+const defaultChartData = {
+	name: "Input",
+	textLayout: {
+		x: -20,
+		y: -30,
+	},
+	nodeSvgShape: {
+		shape: "circle",
+		shapeProps: {
+			r: 10,
+			stroke: "#D1D5DB",
+			fill: "#D1D5DB",
+		},
+	},
+};
 
 export const Home = () => {
 	const [value, setValue] = useState("");
+	const [translate, setTranslate] = useState({});
+	const [chartData] = useState(defaultChartData);
+
+	const chartContainerRef = createRef(null);
 
 	const handleChange = (event) => {
 		const inputValue = event.target.value;
 
 		setValue(inputValue);
 	};
+
+	useTranslate(chartContainerRef, setTranslate);
 
 	return (
 		<div className='main-content'>
@@ -51,7 +76,9 @@ export const Home = () => {
 					<Link href='/glossary'>Glossary</Link>
 				</div>
 			</div>
-			<div className='chart-container'></div>
+			<div className='chart-container' ref={chartContainerRef}>
+				<Tree translate={translate} data={chartData} styles={baseStyles} />
+			</div>
 		</div>
 	);
 };

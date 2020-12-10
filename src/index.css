@@ -8,6 +8,7 @@ body {
 	font-family: "Quicksand", Fallback, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	overflow: auto;
 }
 
 .main-heading {
@@ -66,6 +67,7 @@ body {
 @media screen and (max-width: 640px) {
 	.main-content {
 		grid-template-columns: 1fr;
+		grid-gap: 3rem;
 		padding: 2rem;
 	}
 

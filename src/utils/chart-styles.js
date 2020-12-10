@@ -1,26 +1,18 @@
 export const baseStyles = {
 	links: {
-		stroke: "#9CA3AF",
+		stroke: "#E5E7EB",
 		strokeWidth: 1,
 	},
 	nodes: {
 		node: {
-			circle: {
-				stroke: "#6B7280",
-				strokeWidth: 1,
-			},
 			name: {
-				stroke: "#6B7280",
+				stroke: "#4B5563",
 				strokeWidth: 1,
 			},
 		},
 		leafNode: {
-			circle: {
-				stroke: "#6B7280",
-				strokeWidth: 1,
-			},
 			name: {
-				stroke: "#6B7280",
+				stroke: "#4B5563",
 				strokeWidth: 1,
 			},
 		},
