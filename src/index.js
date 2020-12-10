@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 import { Home } from "./pages/Home";
 
@@ -11,11 +11,9 @@ import { Glossary } from "./pages/Glossary";
 
 const App = () => (
 	<BrowserRouter>
-		<Switch>
-			<Route path='/' component={Home} />
-			<Route path='/reference' component={Reference} />
-			<Route path='/glossary' component={Glossary} />
-		</Switch>
+		<Route exact path='/' component={Home} />
+		<Route path='/reference' component={Reference} />
+		<Route path='/glossary' component={Glossary} />
 	</BrowserRouter>
 );
 

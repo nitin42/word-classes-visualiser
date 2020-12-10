@@ -25,7 +25,7 @@ body {
 }
 
 .description {
-	max-width: 33rem;
+	max-width: 34rem;
 	line-height: 1.85;
 }
 
@@ -51,7 +51,12 @@ body {
 
 .reference-links {
 	display: flex;
-	padding-top: 1.5rem;
+	padding-top: 1rem;
+}
+
+.error {
+	color: #ef4444;
+	font-weight: bold;
 }
 
 .reference-links > a:not(:first-child) {

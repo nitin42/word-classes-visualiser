@@ -2,14 +2,15 @@ import { useState } from "react";
 
 import { Para } from "../components/Para";
 import { Link } from "../components/Link";
+import { MaxWordsWarningMessage } from "../components/MaxWordsWarningMessage";
 
 export const Home = () => {
 	const [value, setValue] = useState("");
 
 	const handleChange = (event) => {
-		const value = event.target.value;
+		const inputValue = event.target.value;
 
-		setValue(value);
+		setValue(inputValue);
 	};
 
 	return (
@@ -17,7 +18,11 @@ export const Home = () => {
 			<div>
 				<h1 className='main-heading'>Grammar Visualiser</h1>
 				<Para>
-					A small tool to visualise the different{" "}
+					A small tool based on{" "}
+					<Link href='https://github.com/spencermountain/compromise'>
+						Compromise
+					</Link>{" "}
+					to visualise the different{" "}
 					<Link href='https://dictionary.cambridge.org/grammar/british-grammar/word-classes-and-phrase-classes'>
 						word-classes
 					</Link>{" "}
@@ -39,6 +44,7 @@ export const Home = () => {
 						onChange={handleChange}
 						placeholder='Enter any text here...'
 					/>
+					<MaxWordsWarningMessage value={value} />
 				</div>
 				<div className='reference-links'>
 					<Link href='/reference'>How to read the diagram?</Link>
