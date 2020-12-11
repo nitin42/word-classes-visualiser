@@ -19,9 +19,28 @@ export const baseStyles = {
 	},
 };
 
-export const baseNodeTextLayout = {
+export const textLayout = {
 	x: -20,
 	y: 20,
+};
+
+export const nodeStyles = {
+	nounNode: {
+		shape: "circle",
+		shapeProps: { r: 10, stroke: "#F472B6", fill: "#F472B6" },
+	},
+	verbsNameNode: {
+		shape: "circle",
+		shapeProps: { r: 10, stroke: "#C4B5FD", fill: "#C4B5FD" },
+	},
+	verbsNode: {
+		shape: "circle",
+		shapeProps: { r: 10, stroke: "#A78BFA", fill: "#A78BFA" },
+	},
+	conjugateNode: {
+		shape: "circle",
+		shapeProps: { r: 10, stroke: "#EDE9FE", fill: "#EDE9FE" },
+	},
 };
 
 export const leafNodeTextLayout = {

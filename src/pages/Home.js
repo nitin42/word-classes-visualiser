@@ -1,4 +1,4 @@
-import { createRef, useEffect, useState } from "react";
+import { createRef, useState } from "react";
 
 import { Para } from "../components/Para";
 import { Link } from "../components/Link";
@@ -6,6 +6,7 @@ import { MaxWordsWarningMessage } from "../components/MaxWordsWarningMessage";
 import Tree from "react-d3-tree";
 import { baseStyles } from "../utils/chart-styles";
 import { useTranslate } from "../hooks/use-translate";
+import { getNouns, getVerbs } from "../utils/nlp";
 
 const defaultChartData = {
 	name: "Input",
@@ -26,14 +27,22 @@ const defaultChartData = {
 export const Home = () => {
 	const [value, setValue] = useState("");
 	const [translate, setTranslate] = useState({});
-	const [chartData] = useState(defaultChartData);
+	const [chartData, setChartData] = useState(defaultChartData);
 
 	const chartContainerRef = createRef(null);
 
 	const handleChange = (event) => {
 		const inputValue = event.target.value;
-
 		setValue(inputValue);
+
+		let data;
+
+		const nouns = getNouns(inputValue);
+		const verbs = getVerbs(inputValue);
+
+		data = [nouns, verbs].filter((d) => Object.keys(d).length !== 0);
+
+		setChartData({ ...chartData, children: data });
 	};
 
 	useTranslate(chartContainerRef, setTranslate);
