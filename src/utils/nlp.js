@@ -94,7 +94,7 @@ export const getNouns = (value) => {
 
 	if (data.length) {
 		return {
-			name: "noun",
+			name: "Nouns",
 			_collapsed: true,
 			children: data,
 			textLayout,
@@ -153,10 +153,168 @@ export const getVerbs = (value) => {
 	return [];
 };
 
-export const getAdjectives = () => {};
+export const getAdjectives = (value) => {
+	const adjectives = nlp(value).adjectives().out("array");
 
-export const getAdverbs = () => {};
+	const data = adjectives.map((adjective) => ({
+		name: adjective.replace(noSpecialChars, ""),
+		textLayout: {
+			x: 10,
+			y: -5,
+		},
+		nodeSvgShape: {
+			shape: "none",
+			shapeProps: {
+				width: 20,
+				height: 20,
+				x: -10,
+				y: -10,
+			},
+		},
+	}));
 
-export const getPrepositions = () => {};
+	if (data.length) {
+		return {
+			name: "Adjectives",
+			children: data,
+			textLayout,
+			_collapsed: true,
+			nodeSvgShape: {
+				shape: "circle",
+				shapeProps: {
+					r: 10,
+					stroke: "#6EE7B7",
+					fill: "#6EE7B7",
+				},
+			},
+		};
+	}
 
-export const getConjunctions = () => {};
+	return [];
+};
+
+export const getAdverbs = (value) => {
+	const adverbs = nlp(value).adverbs().out("array");
+
+	const data = adverbs.map((adverb) => {
+		return {
+			name: adverb.replace(noSpecialChars, ""),
+			textLayout: {
+				x: 10,
+				y: -5,
+			},
+			nodeSvgShape: {
+				shape: "none",
+				shapeProps: {
+					width: 20,
+					height: 20,
+					x: -10,
+					y: -10,
+				},
+			},
+		};
+	});
+
+	if (data.length) {
+		return {
+			name: "Adverb",
+			children: data,
+			textLayout,
+			_collapsed: true,
+			nodeSvgShape: {
+				shape: "circle",
+				shapeProps: {
+					r: 10,
+					stroke: "#FCD34D",
+					fill: "#FCD34D",
+				},
+			},
+		};
+	}
+
+	return [];
+};
+
+export const getPrepositions = (value) => {
+	const prepositions = nlp(value).prepositions().out("array");
+
+	const data = prepositions.map((preposition) => {
+		return {
+			name: preposition.replace(noSpecialChars, ""),
+			textLayout: {
+				x: 10,
+				y: -5,
+			},
+			nodeSvgShape: {
+				shape: "none",
+				shapeProps: {
+					width: 20,
+					height: 20,
+					x: -10,
+					y: -10,
+				},
+			},
+		};
+	});
+
+	if (data.length) {
+		return {
+			name: "Prepositions",
+			children: data,
+			textLayout,
+			_collapsed: true,
+			nodeSvgShape: {
+				shape: "circle",
+				shapeProps: {
+					r: 10,
+					stroke: "#A78BFA",
+					fill: "#A78BFA",
+				},
+			},
+		};
+	}
+
+	return [];
+};
+
+export const getConjunctions = (value) => {
+	const conjunctions = nlp(value).conjunctions().out("array");
+
+	const data = conjunctions.map((conjunction) => {
+		return {
+			name: conjunction.replace(noSpecialChars, ""),
+			textLayout: {
+				x: 10,
+				y: -5,
+			},
+			nodeSvgShape: {
+				shape: "none",
+				shapeProps: {
+					width: 20,
+					height: 20,
+					x: -10,
+					y: -10,
+				},
+			},
+		};
+	});
+
+	if (data.length) {
+		return {
+			name: "Conjunctions",
+			children: data,
+			textLayout,
+			_collapsed: true,
+			nodeSvgShape: {
+				shape: "circle",
+				shapeProps: {
+					r: 10,
+					stroke: "#9D174D",
+					fill: "#9D174D",
+				},
+			},
+		};
+	}
+
+	return [];
+};

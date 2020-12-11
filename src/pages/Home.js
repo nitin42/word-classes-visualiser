@@ -6,7 +6,14 @@ import { MaxWordsWarningMessage } from "../components/MaxWordsWarningMessage";
 import Tree from "react-d3-tree";
 import { baseStyles } from "../utils/chart-styles";
 import { useTranslate } from "../hooks/use-translate";
-import { getNouns, getVerbs } from "../utils/nlp";
+import {
+	getAdjectives,
+	getAdverbs,
+	getConjunctions,
+	getNouns,
+	getPrepositions,
+	getVerbs,
+} from "../utils/nlp";
 
 const defaultChartData = {
 	name: "Input",
@@ -39,8 +46,19 @@ export const Home = () => {
 
 		const nouns = getNouns(inputValue);
 		const verbs = getVerbs(inputValue);
+		const adjectives = getAdjectives(inputValue);
+		const adverbs = getAdverbs(inputValue);
+		const conjunctions = getConjunctions(inputValue);
+		const prepositions = getPrepositions(inputValue);
 
-		data = [nouns, verbs].filter((d) => Object.keys(d).length !== 0);
+		data = [
+			nouns,
+			verbs,
+			adjectives,
+			adverbs,
+			conjunctions,
+			prepositions,
+		].filter((d) => Object.keys(d).length !== 0);
 
 		setChartData({ ...chartData, children: data });
 	};
