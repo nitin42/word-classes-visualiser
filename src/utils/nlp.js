@@ -318,3 +318,80 @@ export const getConjunctions = (value) => {
 
 	return [];
 };
+
+export const filterWordClassData = (data) => {
+	if (!Array.isArray(data)) {
+		return [data].filter((d) => Object.keys(d).length !== 0);
+	}
+
+	return data.filter((d) => Object.keys(d).length !== 0);
+};
+
+export const getWordClassesNames = (data) =>
+	filterWordClassData(data).map((wordClassObj) => wordClassObj.name);
+
+export const getWordClassesData = (inputValue, wordClass) => {
+	const nouns = getNouns(inputValue);
+	const verbs = getVerbs(inputValue);
+	const adjectives = getAdjectives(inputValue);
+	const adverbs = getAdverbs(inputValue);
+	const conjunctions = getConjunctions(inputValue);
+	const prepositions = getPrepositions(inputValue);
+
+	const wordClassesNames = getWordClassesNames([
+		nouns,
+		verbs,
+		adjectives,
+		adverbs,
+		conjunctions,
+		prepositions,
+	]);
+
+	switch (wordClass) {
+		case "default": {
+			return {
+				data: filterWordClassData([
+					nouns,
+					verbs,
+					adjectives,
+					adverbs,
+					conjunctions,
+					prepositions,
+				]),
+				wordClassesNames,
+			};
+		}
+		case "Nouns":
+			return {
+				data: filterWordClassData(nouns),
+				wordClassesNames,
+			};
+		case "Verbs":
+			return {
+				data: filterWordClassData(verbs),
+				wordClassesNames,
+			};
+		case "Adjectives":
+			return {
+				data: filterWordClassData(adjectives),
+				wordClassesNames,
+			};
+		case "Adverbs":
+			return {
+				data: filterWordClassData(adverbs),
+				wordClassesNames,
+			};
+		case "Conjunctions":
+			return {
+				data: filterWordClassData(conjunctions),
+				wordClassesNames,
+			};
+		case "Prepositions":
+			return {
+				data: filterWordClassData(prepositions),
+				wordClassesNames,
+			};
+		default:
+			return;
+	}
+};

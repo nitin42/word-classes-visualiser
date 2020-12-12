@@ -12,7 +12,7 @@ body {
 }
 
 .main-heading {
-	font-size: 2.25rem;
+	font-size: 2.5rem;
 }
 
 .main-content {
@@ -21,17 +21,14 @@ body {
 	padding: 2rem;
 }
 
-.text-input {
-	padding-top: 1rem;
-}
-
 .description {
 	max-width: 34rem;
 	line-height: 1.85;
 }
 
 .external-link {
-	border-bottom: 2px solid #60a5fa;
+	border-bottom: 1px solid #60a5fa;
+	color: #60a5fa !important;
 	text-decoration: none;
 	color: inherit;
 }
@@ -41,13 +38,34 @@ body {
 	height: 20rem;
 	padding: 1rem;
 	line-height: 1.85;
-	border: 1.5px solid #e5e7eb;
+	border: 1.5px solid #111827;
 	border-radius: 5px;
 }
 
+.diagram-info > li:not(:first-child) {
+	padding-top: 0.5rem;
+}
+
 .chart-container {
-	border: 1px solid #d1d5db;
+	border: 1px solid #111827;
 	border-radius: 5px;
+}
+
+.word-classes-dropdown {
+	padding-left: 20px;
+	color: #fdfbfb;
+}
+
+#word-classes-select {
+	margin-left: 5px;
+}
+
+.chart-tools {
+	background-color: #1f2937;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .reference-links {
@@ -62,6 +80,13 @@ body {
 
 .reference-links > a:not(:first-child) {
 	margin-left: 20px;
+}
+
+.footer-text {
+	display: flex;
+	justify-content: center;
+	padding-top: 1rem;
+	color: #6b7280;
 }
 
 @media screen and (max-width: 640px) {

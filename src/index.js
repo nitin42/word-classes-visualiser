@@ -3,17 +3,14 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 
 import { Home } from "./pages/Home";
+import { Diagram } from "./pages/Diagram";
 
 import "./index.css";
-
-import { Reference } from "./pages/Reference";
-import { Glossary } from "./pages/Glossary";
 
 const App = () => (
 	<BrowserRouter>
 		<Route exact path='/' component={Home} />
-		<Route path='/reference' component={Reference} />
-		<Route path='/glossary' component={Glossary} />
+		<Route path='/diagram' component={Diagram} />
 	</BrowserRouter>
 );
 
