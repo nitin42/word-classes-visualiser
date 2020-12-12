@@ -18,6 +18,8 @@ Using the input text, it generates an interactive tree graph which shows a hiera
 
 Each and every part of the graph is interactive, which means:
 
-You can drag the whole graph anywhere.
-Scroll up/down within the graph container to scale up/down.
-Click on each node.
+- You can drag the whole graph anywhere.
+
+- Scroll up/down within the graph container to scale up/down.
+
+- Click on each node.
