@@ -4,24 +4,44 @@ import flattenDeep from "lodash.flattendeep";
 import { noSpecialChars } from "./regexp";
 import { nodeStyles, textLayout } from "./chart-styles";
 
+const conjugateEnum = {
+	PastTense: "Past tense",
+	PresentTense: "Present tense",
+	FutureTense: "Future tense",
+	PerfectTense: "Perfect tense",
+	Pluperfect: "Past perfect tense",
+	Infinitive: "Infinitive",
+	Gerund: "Gerund",
+	Actor: "Actor",
+};
+
+const wordClassesEnum = {
+	Nouns: "Nouns",
+	Verbs: "Verbs",
+	Adjectives: "Adjectives",
+	Adverbs: "Adverbs",
+	Conjunctions: "Conjunctions",
+	Prepositions: "Prepositions",
+};
+
 export const getConjugateKeyName = (key) => {
 	switch (key) {
 		case "PastTense":
-			return "Past tense";
+			return conjugateEnum["PastTense"];
 		case "PresentTense":
-			return "Present tense";
+			return conjugateEnum["PresentTense"];
 		case "FutureTense":
-			return "Future tense";
+			return conjugateEnum["FutureTense"];
 		case "PerfectTense":
-			return "Perfect tense";
+			return conjugateEnum["PerfectTense"];
 		case "Pluperfect":
-			return "Past perfect tense";
+			return conjugateEnum["Pluperfect"];
 		case "Infinitive":
-			return "Infinitive";
+			return conjugateEnum["Infinitive"];
 		case "Gerund":
-			return "Gerund";
+			return conjugateEnum["Gerund"];
 		case "Actor":
-			return "Actor";
+			return conjugateEnum["Actor"];
 		default:
 			return "";
 	}
@@ -88,7 +108,7 @@ export const getNouns = (value) => {
 
 	if (data.length) {
 		return {
-			name: "Nouns",
+			name: wordClassesEnum.Nouns,
 			_collapsed: true,
 			children: data,
 			textLayout,
@@ -136,7 +156,7 @@ export const getVerbs = (value) => {
 
 	if (data.length) {
 		return {
-			name: "Verbs",
+			name: wordClassesEnum.Verbs,
 			children: data,
 			textLayout,
 			_collapsed: true,
@@ -169,7 +189,7 @@ export const getAdjectives = (value) => {
 
 	if (data.length) {
 		return {
-			name: "Adjectives",
+			name: wordClassesEnum.Adjectives,
 			children: data,
 			textLayout,
 			_collapsed: true,
@@ -211,7 +231,7 @@ export const getAdverbs = (value) => {
 
 	if (data.length) {
 		return {
-			name: "Adverb",
+			name: wordClassesEnum.Adverbs,
 			children: data,
 			textLayout,
 			_collapsed: true,
@@ -253,7 +273,7 @@ export const getPrepositions = (value) => {
 
 	if (data.length) {
 		return {
-			name: "Prepositions",
+			name: wordClassesEnum.Prepositions,
 			children: data,
 			textLayout,
 			_collapsed: true,
@@ -295,7 +315,7 @@ export const getConjunctions = (value) => {
 
 	if (data.length) {
 		return {
-			name: "Conjunctions",
+			name: wordClassesEnum.Conjunctions,
 			children: data,
 			textLayout,
 			_collapsed: true,
@@ -355,32 +375,32 @@ export const getWordClassesData = (inputValue, wordClass) => {
 				wordClassesNames,
 			};
 		}
-		case "Nouns":
+		case wordClassesEnum.Nouns:
 			return {
 				data: filterWordClassData(nouns),
 				wordClassesNames,
 			};
-		case "Verbs":
+		case wordClassesEnum.Verbs:
 			return {
 				data: filterWordClassData(verbs),
 				wordClassesNames,
 			};
-		case "Adjectives":
+		case wordClassesEnum.Adjectives:
 			return {
 				data: filterWordClassData(adjectives),
 				wordClassesNames,
 			};
-		case "Adverbs":
+		case wordClassesEnum.Adverbs:
 			return {
 				data: filterWordClassData(adverbs),
 				wordClassesNames,
 			};
-		case "Conjunctions":
+		case wordClassesEnum.Conjunctions:
 			return {
 				data: filterWordClassData(conjunctions),
 				wordClassesNames,
 			};
-		case "Prepositions":
+		case wordClassesEnum.Prepositions:
 			return {
 				data: filterWordClassData(prepositions),
 				wordClassesNames,
