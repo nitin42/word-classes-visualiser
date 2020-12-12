@@ -2,7 +2,9 @@
 
 # Word classes visualiser
 
+<p align="center">
 <img src="https://firebasestorage.googleapis.com/v0/b/photos-a2ca0.appspot.com/o/v.gif?alt=media&token=b7b5671c-7806-4c80-8560-c933f0059f69" alt="" />
+</p>
 
 ## What is it?
 
