@@ -1,1 +1,1 @@
-export const noSpecialChars = /[&\\/\\#,+()$~%.'":*?<>{}]/g;
+export const noSpecialChars = /[&\\/\\#,+()$~%.'":*?<>{}]/g
