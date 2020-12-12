@@ -2,7 +2,7 @@
 
 # Word classes visualiser
 
-<img src="https://firebasestorage.googleapis.com/v0/b/photos-a2ca0.appspot.com/o/Screenshot%202020-12-12%20at%2017.55.50.png?alt=media&token=e0e9552d-d349-4aed-955c-1ffa55aaf04a" alt="" />
+<img src="https://firebasestorage.googleapis.com/v0/b/photos-a2ca0.appspot.com/o/v.gif?alt=media&token=b7b5671c-7806-4c80-8560-c933f0059f69" alt="" />
 
 ## What is it?
 
