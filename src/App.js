@@ -137,9 +137,7 @@ export const App = () => {
       </div>
 
       <footer className="footer-text">
-        <p>
-          © <span id="present-year"></span> Nitin Tulswani All Rights Reserved
-        </p>
+        <p>© {new Date().getFullYear()} Nitin Tulswani All Rights Reserved</p>
       </footer>
     </>
   )
