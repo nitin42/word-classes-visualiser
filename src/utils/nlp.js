@@ -27,12 +27,6 @@ export const getConjugateKeyName = (key) => {
 	}
 };
 
-/**
- * 1. Get the data about the derived forms.
- * 2. Check if the data for each derived form is not empty
- * 3. Append the data to the array if it isn't empty.
- */
-
 const getConjugates = (data) => {
 	if (data) {
 		const conjugates = [];
