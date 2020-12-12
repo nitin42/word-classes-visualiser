@@ -1,13 +1,13 @@
 import { createRef, useState } from "react";
 
-import { Para } from "../components/Para";
-import { Link } from "../components/Link";
+import { Para } from "./components/Para";
+import { Link } from "./components/Link";
 
-import { useTranslate } from "../hooks/use-translate";
-import { getWordClassesData } from "../utils/nlp";
-import { GraphTools } from "../components/GraphTools";
-import { TreeGraph } from "../components/TreeGraph";
-import { TextInput } from "../components/TextInput";
+import { useTranslate } from "./hooks/use-translate";
+import { getWordClassesData } from "./utils/nlp";
+import { GraphTools } from "./components/GraphTools";
+import { TreeGraph } from "./components/TreeGraph";
+import { TextInput } from "./components/TextInput";
 
 const defaultChartData = {
 	name: "Input",
@@ -25,7 +25,7 @@ const defaultChartData = {
 	},
 };
 
-export const Home = () => {
+export const App = () => {
 	/**
 	 * State for storing the user input text value
 	 */
