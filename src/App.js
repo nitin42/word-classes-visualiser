@@ -118,7 +118,7 @@ export const App = () => {
           <ul className="diagram-info">
             <li>You can drag the whole graph anywhere.</li>
             <li>Scroll up/down within the graph container to scale up/down.</li>
-            <li>Click on each node.</li>
+            <li>Click on each node. Every node in the graph is interactive.</li>
           </ul>
         </div>
 

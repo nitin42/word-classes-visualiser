@@ -22,4 +22,4 @@ Each and every part of the graph is interactive, which means:
 
 - Scroll up/down within the graph container to scale up/down.
 
-- Click on each node.
+- Click on each node. Every node in the graph is interactive and can be clicked.
