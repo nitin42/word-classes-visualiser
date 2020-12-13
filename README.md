@@ -1,5 +1,3 @@
-**WORK IN PROGRESS**
-
 # Word classes visualiser
 
 <p align="center">
