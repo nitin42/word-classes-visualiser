@@ -100,4 +100,8 @@ body {
   .main-heading {
     font-size: 2rem;
   }
+
+  .chart-container {
+    height: 30rem;
+  }
 }
